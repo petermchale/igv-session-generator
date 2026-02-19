@@ -38,7 +38,7 @@ python multiple-individuals.py --samples <id1,id2,...> --locus <locus> [--out <f
 **Example:**
 
 ```bash
-python multiple-individuals.py --samples 200081,200082,200083 --locus chr14:100826000-100827000 --out trio_session.xml
+python multiple-individuals.py --samples 200081,200082,200084,200085,200086,200087,200101,200102,200103,200104,200105,200106,NA12877,NA12878,NA12879,NA12881,NA12882,NA12883,NA12884,NA12885,NA12886,NA12887 --locus chr14:100826000-100827000 
 ```
 
 ## Output
