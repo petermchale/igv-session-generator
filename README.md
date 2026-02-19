@@ -27,6 +27,7 @@ python single-individual.py 200081 chr14:100826000-100827000
 
 Generates an IGV session for **multiple individuals** (without BAM tracks), including:
 
+- Joint-genotyped VCF variant track (CEPH-1463)
 - Paternal and maternal DNA methylation tracks for each sample
 - Paternal and maternal haplotype block tracks for each sample
 - Reference sequence track
@@ -57,4 +58,6 @@ founder-phased/
   {id}.hap-map-blocks.maternal.sorted.bed.gz (+.tbi)
 read-backed-phased/
   {id}.GRCh38.haplotagged.bam (+.bai)
+vcfs/
+  CEPH-1463.joint.GRCh38.deepvariant.glnexus.phased.vcf.gz (+.tbi)
 ```

@@ -34,6 +34,20 @@ def create_multi_sample_igv_session(
     # Create FeaturePanel for all haplotype blocks
     feature_panel = ET.SubElement(session, "Panel", {"name": "FeaturePanel", "height": "200"})
 
+    # Add VCF resource and track
+    vcf_path = f"{base_url}/vcfs/CEPH-1463.joint.GRCh38.deepvariant.glnexus.phased.vcf.gz"
+    vcf_index = f"{vcf_path}.tbi"
+    ET.SubElement(resources, "Resource", {"index": vcf_index, "path": vcf_path, "type": "vcf"})
+
+    ET.SubElement(feature_panel, "Track", {
+        "attributeKey": "joint_vcf",
+        "clazz": "org.broad.igv.variant.VariantTrack",
+        "fontSize": "10",
+        "id": vcf_path,
+        "name": "CEPH-1463 Joint VCF",
+        "visible": "true"
+    })
+
     for sample_id in sample_ids:
         # 1. Add Resources (BigWig and BED)
         # Methylation BigWigs
