@@ -58,7 +58,7 @@ def create_multi_sample_igv_session(
         "clazz": "org.broad.igv.variant.VariantTrack",
         "fontSize": "10",
         "id": vcf_iht_path,
-        "name": "IHT-Phased variants",
+        "name": "Phased variants (PAT|MAT)",
         "visible": "true"
     })
 
@@ -97,7 +97,7 @@ def create_multi_sample_igv_session(
                 "featureVisibilityWindow": "2147483647",
                 "fontSize": "10",
                 "id": bed_path,
-                "name": f"{sample_id} {parent.capitalize()} Blocks",
+                "name": f"{sample_id} {parent.upper()[:3]} Blocks",
                 "visible": "true"
             })
 

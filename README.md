@@ -61,5 +61,5 @@ read-backed-phased/
 vcfs/
   CEPH-1463.joint.GRCh38.deepvariant.glnexus.phased.vcf.gz (+.tbi)
 vcfs-iht-phased/
-  CEPH1463.GRCh38.pass.sorted.vcf.gz (+.tbi)
+  CEPH1463.GRCh38.pass.sorted.vcf.gz (+.tbi) phased as: "paternal | maternal" # https://quinlangroup.slack.com/archives/C08U7NLC9PZ/p1748885496941579
 ```
