@@ -34,7 +34,7 @@ def create_multi_sample_igv_session(
     # Create FeaturePanel for all haplotype blocks
     feature_panel = ET.SubElement(session, "Panel", {"name": "FeaturePanel", "height": "200"})
 
-    # Add VCF resource and track
+    # Add VCF resources and tracks
     vcf_path = f"{base_url}/vcfs/CEPH-1463.joint.GRCh38.deepvariant.glnexus.phased.vcf.gz"
     vcf_index = f"{vcf_path}.tbi"
     ET.SubElement(resources, "Resource", {"index": vcf_index, "path": vcf_path, "type": "vcf"})
@@ -44,7 +44,20 @@ def create_multi_sample_igv_session(
         "clazz": "org.broad.igv.variant.VariantTrack",
         "fontSize": "10",
         "id": vcf_path,
-        "name": "CEPH-1463 Joint VCF",
+        "name": "All variants",
+        "visible": "true"
+    })
+
+    vcf_iht_path = f"{base_url}/vcfs-iht-phased/CEPH1463.GRCh38.pass.sorted.vcf.gz"
+    vcf_iht_index = f"{vcf_iht_path}.tbi"
+    ET.SubElement(resources, "Resource", {"index": vcf_iht_index, "path": vcf_iht_path, "type": "vcf"})
+
+    ET.SubElement(feature_panel, "Track", {
+        "attributeKey": "joint_vcf_iht_phased",
+        "clazz": "org.broad.igv.variant.VariantTrack",
+        "fontSize": "10",
+        "id": vcf_iht_path,
+        "name": "IHT-Phased variants",
         "visible": "true"
     })
 

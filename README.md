@@ -60,4 +60,6 @@ read-backed-phased/
   {id}.GRCh38.haplotagged.bam (+.bai)
 vcfs/
   CEPH-1463.joint.GRCh38.deepvariant.glnexus.phased.vcf.gz (+.tbi)
+vcfs-iht-phased/
+  CEPH1463.GRCh38.pass.sorted.vcf.gz (+.tbi)
 ```
