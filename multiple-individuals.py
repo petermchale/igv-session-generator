@@ -42,6 +42,7 @@ def create_multi_sample_igv_session(
     ET.SubElement(feature_panel, "Track", {
         "attributeKey": "joint_vcf",
         "clazz": "org.broad.igv.variant.VariantTrack",
+        "displayMode": "COLLAPSED",
         "fontSize": "10",
         "id": vcf_path,
         "name": "All variants",
@@ -64,7 +65,7 @@ def create_multi_sample_igv_session(
     for sample_id in sample_ids:
         # 1. Add Resources (BigWig and BED)
         # Methylation BigWigs
-        for parent in ["mat", "pat"]:
+        for parent in ["pat", "mat"]:
             path = f"{base_url}/founder-phased/{sample_id}.dna-methylation.founder-phased.{parent}.{methylation_type}.{genome}.bw"
             ET.SubElement(resources, "Resource", {"path": path, "type": "bw"})
             
